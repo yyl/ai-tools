@@ -25,3 +25,18 @@ uv run python transaction-processor.py ../data/2024 tools_data/auto_cat/data.db
 # all labels done are also tracked in a history JSON file
 uv run python transaction-labeller.py tools_data/auto_cat/data.db
 ```
+
+## github_repo_stat
+
+Analyzes a public or private GitHub repository and reports code statistics (total lines, files, commits, lifespan, and per-file/per-commit stats).
+
+```bash
+# Public repo
+uv run python github_repo_stat.py https://github.com/owner/repo
+
+# Private repo (pass token directly)
+uv run python github_repo_stat.py https://github.com/owner/private-repo --token ghp_xxx
+
+# Private repo (via environment variable)
+GITHUB_TOKEN=ghp_xxx uv run python github_repo_stat.py https://github.com/owner/private-repo
+```
